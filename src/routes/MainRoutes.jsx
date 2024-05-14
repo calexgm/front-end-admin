@@ -4,13 +4,11 @@ import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import Dashboard from 'layout/Dashboard';
 
-const Color = Loadable(lazy(() => import('pages/component-overview/color')));
-const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
-const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 
-// render - sample page
-const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
+// Paginas admin
+const User = Loadable(lazy(() => import('pages/admin/User')));
+const Client = Loadable(lazy(() => import('pages/admin/Client')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -19,34 +17,17 @@ const MainRoutes = {
   element: <Dashboard />,
   children: [
     {
-      path: '/',
+      path: '/dashboard',
       element: <DashboardDefault />
     },
     {
-      path: 'color',
-      element: <Color />
+      path: 'users',
+      element: <User />
     },
     {
-      path: 'dashboard',
-      children: [
-        {
-          path: 'default',
-          element: <DashboardDefault />
-        }
-      ]
+      path: 'clients',
+      element: <Client />
     },
-    {
-      path: 'sample-page',
-      element: <SamplePage />
-    },
-    {
-      path: 'shadow',
-      element: <Shadow />
-    },
-    {
-      path: 'typography',
-      element: <Typography />
-    }
   ]
 };
 

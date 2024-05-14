@@ -16,9 +16,9 @@ export default function AuthFooter() {
         textAlign={{ xs: 'center', sm: 'inherit' }}
       >
         <Typography variant="subtitle2" color="secondary">
-          This site is protected by{' '}
+        © [2024] Nombre de la Empresa. Todos los derechos reservados.{' '}
           <Typography component={Link} variant="subtitle2" href="#mantis-privacy" target="_blank" underline="hover">
-            Privacy Policy
+            Politica de privacidad
           </Typography>
         </Typography>
 
@@ -31,7 +31,7 @@ export default function AuthFooter() {
             target="_blank"
             underline="hover"
           >
-            Terms and Conditions
+            Terminos y condiciones
           </Typography>
           <Typography
             variant="subtitle2"
@@ -41,17 +41,7 @@ export default function AuthFooter() {
             target="_blank"
             underline="hover"
           >
-            Privacy Policy
-          </Typography>
-          <Typography
-            variant="subtitle2"
-            color="secondary"
-            component={Link}
-            href="https://codedthemes.com"
-            target="_blank"
-            underline="hover"
-          >
-            CA Privacy Notice
+            Politica de privacidad
           </Typography>
         </Stack>
       </Stack>

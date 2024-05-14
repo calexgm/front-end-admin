@@ -52,8 +52,8 @@ export default function AuthLogin({ isDemo = false }) {
           submit: null
         }}
         validationSchema={Yup.object().shape({
-          email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-          password: Yup.string().max(255).required('Password is required')
+          email: Yup.string().email('Ingrese un correo válido').max(255).required('Correo requerido'),
+          password: Yup.string().max(255).required('Contraseña requerida')
         })}
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
@@ -61,7 +61,7 @@ export default function AuthLogin({ isDemo = false }) {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="email-login">Email Address</InputLabel>
+                  <InputLabel htmlFor="email-login">Correo</InputLabel>
                   <OutlinedInput
                     id="email-login"
                     type="email"
@@ -69,7 +69,7 @@ export default function AuthLogin({ isDemo = false }) {
                     name="email"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Enter email address"
+                    placeholder="Ingrese correo"
                     fullWidth
                     error={Boolean(touched.email && errors.email)}
                   />
@@ -82,7 +82,7 @@ export default function AuthLogin({ isDemo = false }) {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="password-login">Password</InputLabel>
+                  <InputLabel htmlFor="password-login">Contraseña</InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.password && errors.password)}
@@ -105,7 +105,7 @@ export default function AuthLogin({ isDemo = false }) {
                         </IconButton>
                       </InputAdornment>
                     }
-                    placeholder="Enter password"
+                    placeholder="Ingrese su contraseña"
                   />
                 </Stack>
                 {touched.password && errors.password && (
@@ -127,10 +127,10 @@ export default function AuthLogin({ isDemo = false }) {
                         size="small"
                       />
                     }
-                    label={<Typography variant="h6">Keep me sign in</Typography>}
+                    label={<Typography variant="h6">Recuerdame</Typography>}
                   />
                   <Link variant="h6" component={RouterLink} color="text.primary">
-                    Forgot Password?
+                    Olvido su contraseña?
                   </Link>
                 </Stack>
               </Grid>
@@ -141,19 +141,24 @@ export default function AuthLogin({ isDemo = false }) {
               )}
               <Grid item xs={12}>
                 <AnimateButton>
-                  <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
-                    Login
+                  <Button href="/dashboard" 
+                  disableElevation disabled={isSubmitting} 
+                  fullWidth size="large" 
+                  // type="submit" 
+                  type="button" 
+                  variant="contained" color="primary">
+                    Iniciar sesión
                   </Button>
                 </AnimateButton>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Divider>
                   <Typography variant="caption"> Login with</Typography>
                 </Divider>
               </Grid>
               <Grid item xs={12}>
                 <FirebaseSocial />
-              </Grid>
+              </Grid> */}
             </Grid>
           </form>
         )}

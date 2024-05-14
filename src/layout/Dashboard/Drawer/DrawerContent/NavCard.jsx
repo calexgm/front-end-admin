@@ -20,14 +20,14 @@ export default function NavCard() {
       <Stack alignItems="center" spacing={2.5}>
         <CardMedia component="img" image={avatar} sx={{ width: 112 }} />
         <Stack alignItems="center">
-          <Typography variant="h5">Mantis Pro</Typography>
+          <Typography variant="h5">Adquiere mas modulos</Typography>
           <Typography variant="h6" color="secondary">
-            Checkout pro features
+            Modulos extras
           </Typography>
         </Stack>
         <AnimateButton>
-          <Button component={Link} target="_blank" href="https://mantisdashboard.io" variant="contained" color="success" size="small">
-            Pro
+          <Button component={Link} target="_blank" href="#" variant="contained" color="success" size="small">
+            Ver precios
           </Button>
         </AnimateButton>
       </Stack>

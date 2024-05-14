@@ -1,22 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
-import { RouterProvider, Routes } from 'react-router-dom';
+import { RouterProvider, BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom';
 
 // project import
-import Login from 'pages/authentication/login';
+
+import router from 'routes';
+
+
 import ThemeCustomization from 'themes';
 
 import ScrollTop from 'components/ScrollTop';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [isLoggedIn, setIsLoggedIn ] = useState(false);
 
   return (
     <ThemeCustomization>
-        <Login> </Login>
+      <ScrollTop>
+        <RouterProvider router={router} />
+      </ScrollTop>
+      {/* <Routes>
+        <Route
+          path="/"
+          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+        />
+        {!isLoggedIn && <Route path="/dashboard" element={<Dashboard />} />}
+      </Routes> */}
     </ThemeCustomization>
   );
 }
